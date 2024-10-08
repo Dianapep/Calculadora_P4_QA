@@ -30,10 +30,36 @@ class CalculatorTest {
     }
 
     @Test
+    void testDiv() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.div(10, 2));          // 10 / 2 = 5
+        assertEquals(2.5, calculator.div(5, 2));         // 5 / 2 = 2.5
+        assertEquals(0.5, calculator.div(10, 20));       // 10 / 20 = 0.5
+        assertEquals(-2, calculator.div(-10, 5));        // -10 / 5 = -2
+        assertEquals(2, calculator.div(20, 5, 2));       // 20 / 5 / 2 = 2
+    }
+
+    @Test
+    void testPotencia() {
+        Calculator calculator = new Calculator();
+        assertEquals(8, calculator.potencia(2, 3));    // 2^3 = 8
+        assertEquals(1, calculator.potencia(5, 0));    // 5^0 = 1
+        assertEquals(0.25, calculator.potencia(2, -2)); // 2^(-2) = 0.25
+        assertEquals(-8, calculator.potencia(-2, 3));   // (-2)^3 = -8
+        assertEquals(16, calculator.potencia(-4, 2));   // (-4)^2 = 16
+    }
+
+    @Test
     void testFactorialPositiveNumber() {
         Calculator calculator = new Calculator();
         assertEquals(120, calculator.factorial(5));
         assertEquals(1, calculator.factorial(0));
+    }
+    @Test
+    void testSub() {
+        Calculator calculator = new Calculator();
+        assertEquals(4, calculator.sub(5,1));
+        assertEquals(0, calculator.sub(0));
     }
 
     @Test
